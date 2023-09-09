@@ -19,7 +19,7 @@ export const Login = () => {
         loginUser(user)
             .then(res => {
                 if ("valid" in res && res.valid && "token" in res) {
-                    localStorage.setItem("lu_token", res.token)
+                    localStorage.setItem("st_token", res.token)
                     navigate("/")
                 }
                 else {
@@ -36,24 +36,22 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Level Up</h1>
-                    <h2>Please sign in</h2>
+                    <h1 className="text-center text-white">Sticker Storm</h1>
+                    <h2 className="text-center text-white">Please sign in</h2>
                     <fieldset>
-                        <label htmlFor="inputUsername"> Username address </label>
+                        <label className="text-white" htmlFor="inputUsername"> Username address </label>
                         <input ref={username} type="username" id="username" className="form-control" placeholder="Username address" required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
+                        <label className="text-white" htmlFor="inputPassword"> Password </label>
                         <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
                     </fieldset>
-                    <fieldset style={{
-                        textAlign: "center"
-                    }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
-                    </fieldset>
+                    <div className="py-5 m-8 mx-40 text-center ring">
+                        <button className="text-white" type="submit">Sign In</button>
+                    </div>
                 </form>
             </section>
-            <section className="link--register">
+            <section className="py-10 text-center text-white">
                 <Link to="/register">Not a member yet?</Link>
             </section>
         </main>

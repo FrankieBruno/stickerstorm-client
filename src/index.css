@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*Typography
 --------------------------------------------------------------*/
 
@@ -17,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
