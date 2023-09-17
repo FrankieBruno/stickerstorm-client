@@ -57,12 +57,12 @@ export const StickerForm = () => {
     };
     /* I need to make input fields for maker(done), number_of_players, skill_level, game_type, gamer*/
     return (
-    <form className="stickerForm px-1 bg-primary">
-        <h2 className="stickerForm__title text-3xl text-center pt-4 pb-6 text-secondary text-white">
+    <form className="px-1 stickerForm bg-primary">
+        <h2 className="pt-4 pb-6 text-3xl text-center text-white stickerForm__title text-secondary">
         Make New Sticker
         </h2>
         <fieldset>
-        <div className="form-group text-white">
+        <div className="text-white form-group">
             <label htmlFor="name">Name: </label>
             <input
                 type="text"
@@ -76,7 +76,7 @@ export const StickerForm = () => {
         </div>
         </fieldset>
         <fieldset>
-        <div className="form-group text-white">
+        <div className="text-white form-group">
             <label htmlFor="image">Image: </label>
             <input
                 type="text"
@@ -90,7 +90,7 @@ export const StickerForm = () => {
         </div>
         </fieldset>
         <fieldset>
-        <div className="form-group text-white">
+        <div className="text-white form-group">
             <label htmlFor="finish_type">FinishType: </label>
             <select
                 name="finish_type"
@@ -108,7 +108,7 @@ export const StickerForm = () => {
         </div>
         </fieldset>
         <fieldset>
-        <div className="form-group text-white">
+        <div className="text-white form-group">
             <label htmlFor="sticker_size">Size: </label>
             <select
             name="sticker_size"
@@ -126,7 +126,7 @@ export const StickerForm = () => {
         </div>
         </fieldset>
         <fieldset>
-        <div className="form-group text-white">
+        <div className="text-white form-group">
             <label htmlFor="price">Price: </label>
             <input
                 type="number"
@@ -158,7 +158,7 @@ export const StickerForm = () => {
             // Send POST request to your API
             createSticker(sticker).then(() => navigate("/stickers"));
             }}
-        className="text-center py-10 text-white"
+        className="py-10 text-center text-white"
         >
         Create
         </button>

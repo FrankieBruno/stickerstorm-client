@@ -1,5 +1,5 @@
 export const createSticker = (sticker) => {
-    return fetch("https://stickerstorm-server-58fee60f8fc2.herokuapp.com/stickers", {
+    return fetch("https://deploy--stickerstorm.netlify.app/stickers", {
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -11,7 +11,7 @@ export const createSticker = (sticker) => {
 }
 
 export const getStickers = () => {
-    return fetch(`https://stickerstorm-server-58fee60f8fc2.herokuapp.com/stickers`, { 
+    return fetch(`https://deploy--stickerstorm.netlify.app/stickers`, { 
         headers:{
             "Authorization": `Token ${localStorage.getItem("st_token")}`
         }
@@ -20,7 +20,7 @@ export const getStickers = () => {
 }
 
 export const getSingleSticker = (id) => {
-    return fetch(`https://stickerstorm-server-58fee60f8fc2.herokuapp.com/stickers/${id}`, {
+    return fetch(`https://deploy--stickerstorm.netlify.app/stickers/${id}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("st_token")}`
         }
@@ -29,7 +29,7 @@ export const getSingleSticker = (id) => {
 }
 
 export const getFinishTypes = () => {
-    return fetch("https://stickerstorm-server-58fee60f8fc2.herokuapp.com/finishes", {
+    return fetch("https://deploy--stickerstorm.netlify.app/finishes", {
         headers:{
             "Authorization": `Token ${localStorage.getItem("st_token")}`
         }
@@ -38,7 +38,7 @@ export const getFinishTypes = () => {
 }
 
 export const getStickerSizes = () => {
-    return fetch("https://stickerstorm-server-58fee60f8fc2.herokuapp.com/sizes", {
+    return fetch("https://deploy--stickerstorm.netlify.app/sizes", {
         headers:{
             "Authorization": `Token ${localStorage.getItem("st_token")}`
         }
@@ -48,7 +48,7 @@ export const getStickerSizes = () => {
 
 
 export const updateSticker = (sticker,id) => {
-    return fetch(`https://stickerstorm-server-58fee60f8fc2.herokuapp.com/stickers/${id}`, {
+    return fetch(`https://deploy--stickerstorm.netlify.app/stickers/${id}`, {
         method: "PUT",
         headers:{
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export const updateSticker = (sticker,id) => {
 }
 
 export const deleteSticker = (id) => {
-    return fetch(`https://stickerstorm-server-58fee60f8fc2.herokuapp.com/stickers/${id}`, {
+    return fetch(`https://deploy--stickerstorm.netlify.app/stickers/${id}`, {
         method: "DELETE",
         headers:{
             "Content-Type": "application/json",
