@@ -10,7 +10,7 @@ import { StickerUpdate } from "../components/sticker/StickerUpdate"
 
 
 export const ApplicationViews = () => {
-    return <> <Routes>
+    return (<Routes>
             {/* <Route path="/login" element={<Login to="/login" />} />
             <Route path="/register" element={<Register />} /> */}
             <Route element={<Authorized />}>
@@ -19,5 +19,5 @@ export const ApplicationViews = () => {
             <Route path="/stickers/update/:stickerId" element={<StickerUpdate />} />
             </Route>
         </Routes>
-        </>
+    )
 }
