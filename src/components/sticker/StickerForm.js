@@ -62,7 +62,7 @@ export const StickerForm = () => {
         Make New Sticker
         </h2>
         <fieldset>
-        <div className="text-white form-group">
+        <div className="flex items-center justify-center w-1/2 mx-auto text-white form-group">
             <label htmlFor="name">Name: </label>
             <input
                 type="text"
@@ -76,7 +76,7 @@ export const StickerForm = () => {
         </div>
         </fieldset>
         <fieldset>
-        <div className="flex items-center justify-center text-white form-group">
+        <div className="flex items-center justify-center w-1/2 mx-auto text-white form-group">
             <label htmlFor="image">Image: </label>
             <input
                 type="text"
@@ -90,7 +90,8 @@ export const StickerForm = () => {
         </div>
         </fieldset>
         <fieldset>
-        <div className="text-white form-group">
+            <div className="flex items-center justify-center">
+        <div className="inline-block px-4 py-2 mx-auto font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
             <label htmlFor="finish_type">FinishType: </label>
             <select
                 name="finish_type"
@@ -106,9 +107,11 @@ export const StickerForm = () => {
             ))}
             </select>
         </div>
+        </div>
         </fieldset>
         <fieldset>
-        <div className="text-white form-group">
+            <div className="flex items-center justify-center">
+        <div className="inline-block px-4 py-2 mx-auto font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
             <label htmlFor="sticker_size">Size: </label>
             <select
             name="sticker_size"
@@ -124,9 +127,10 @@ export const StickerForm = () => {
             ))}
             </select>
         </div>
+        </div>
         </fieldset>
         <fieldset>
-        <div className="text-white form-group">
+        <div className="flex items-center justify-center w-1/2 mx-auto text-white form-group">
             <label htmlFor="price">Price: </label>
             <input
                 type="number"
@@ -140,7 +144,8 @@ export const StickerForm = () => {
         </div>
         </fieldset>
 
-        <button
+        <div className="flex justify-center">
+            <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700" 
         type="submit"
         onClick={(evt) => {
           // Prevent form from being submitted
@@ -158,10 +163,10 @@ export const StickerForm = () => {
             // Send POST request to your API
             createSticker(sticker).then(() => navigate("/stickers"));
             }}
-        className="py-10 text-center text-white"
         >
         Create
         </button>
+        </div>
     </form>
     );
 };
