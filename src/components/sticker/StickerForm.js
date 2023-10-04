@@ -76,7 +76,7 @@ export const StickerForm = () => {
         </div>
         </fieldset>
         <fieldset>
-        <div className="text-white form-group">
+        <div className="flex items-center justify-center text-white form-group">
             <label htmlFor="image">Image: </label>
             <input
                 type="text"
