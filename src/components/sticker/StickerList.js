@@ -28,7 +28,7 @@ export const StickerList = (props) => {
               <div className="additional--background"></div>
               <div className="sticker__name">{sticker.name}</div>
               <img
-                className="flex flex-col items-center justify-center h-32 min-h-screen sticker__image w-30"
+                className="h-32 sticker__image w-30"
                 src={sticker.image}
                 alt="sticker-image"
               />
