@@ -21,7 +21,7 @@ export const StickerList = (props) => {
 
   return (
     <>
-      <article className="text-white stickers">
+      <article className="flex flex-col items-center justify-center min-h-screen text-white stickers">
         {stickers.map((sticker) => {
           return (
             <section key={`sticker--${sticker.id}`} className="sticker">
