@@ -1,7 +1,7 @@
-import React, { useRef } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { loginUser } from "../../managers/AuthManager"
-import "./Auth.css"
+import React, { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from "../../managers/AuthManager";
+import "./Auth.css";
 
 
 export const Login = () => {
@@ -10,50 +10,70 @@ export const Login = () => {
     const invalidDialog = useRef()
     const navigate = useNavigate()
 
-    const handleLogin = (e) => {
-        e.preventDefault()
-        const user = {
-            username: username.current.value,
-            password: password.current.value
-        }
-        loginUser(user)
-            .then(res => {
-                if ("valid" in res && res.valid && "token" in res) {
-                    localStorage.setItem("st_token", res.token)
-                    navigate("/")
-                }
-                else {
+    const handleLogin = (ev) => {
+        ev.preventDefault()
+        try {
+            const user = {
+                username: username.current.value,
+                password: password.current.value
+            }
+            loginUser(user)
+                .then(res => {
+                    if ("valid" in res && res.valid && "token" in res) {
+                        localStorage.setItem("st_token", res.token)
+                        navigate("/")
+                    }
+                            
+                })
+                .catch(err => {
+                    console.error(err)
                     invalidDialog.current.showModal()
-                }
-            })
+                })
+        } 
+        catch(er) {
+            console.log("formsubmission error")
+        }
     }
 
-    return (
-        <main className="container--login">
-            <dialog className="dialog dialog--auth" ref={invalidDialog}>
-                <div>Username or password was not valid.</div>
-                <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
-            </dialog>
-            <section>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1 className="text-center text-white">Sticker Storm</h1>
-                    <h2 className="text-center text-white">Please sign in</h2>
-                    <fieldset>
-                        <label className="text-white" htmlFor="inputUsername"> Username address </label>
-                        <input ref={username} type="username" id="username" className="form-control" placeholder="Username address" required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <label className="text-white" htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
-                    </fieldset>
-                    <div className="py-5 m-8 mx-40 text-center ring">
-                        <button className="text-white" type="submit">Sign In</button>
-                    </div>
-                </form>
-            </section>
-            <section className="py-10 text-center text-white">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
-        </main>
-    )
-}
+    return <main>
+        <dialog className="dialog dialog--auth" ref={invalidDialog}>
+            <div>Username or password was not valid.</div>
+            <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
+        </dialog>
+        <div className="login">
+
+            <img src='/stickerstormlogo.png' alt='sticker storm logo' />
+            <form className="form--login" onSubmit={handleLogin}>
+            <h1 className="text-center">Make a new sticker</h1>
+                <div className="form-control">
+                    <input ref={username} type="username" className="form-input" id="username" placeholder="Username" required autoFocus />
+                </div>
+                <div className="form-control">
+                    <input ref={password} type="password" className="form-input" id="password" placeholder="Password" required />
+                </div>
+                <div className="form-actions">
+                    <Link className="register-link" to="/register" >Create an account</Link>
+                    <button className="submitbutton" type="submit">Sign In</button>
+                </div>
+            </form>
+        </div>
+        <div className='previousprints'>
+            <div className='previousprintstext'>
+                <span className="previousprintstitle">PREVIOUS PRINTS</span>
+                <span className="previousprintsitem selected">
+                    <span className="previousprintslabel">1. </span>
+                    Alien prints
+                </span>
+                <span className="previousprintsitem">
+                    <span className="previousprintslabel">2. </span>
+                    Animal prints
+                </span>
+                <span className="previousprintsitem">
+                    <span className="previousprintslabel">3. </span>
+                    National park prints
+                 </span>
+            </div>
+            <img src='/previousprints.png' alt='example of stickers'/>
+        </div>
+    </main>;
+};
