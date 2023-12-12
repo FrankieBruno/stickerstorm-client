@@ -30,8 +30,9 @@ export const StickerForm = () => {
     //in this section I am grabbing my sticker types from my StickerManager.js...//
     //importing them into my file then setting my state for the game types//
     // TODO: Get all sticker, then set the state
+    console.log(stickers);
     getStickers().then((res) => setStickers(res));
-    }, []);
+    });
 
     useEffect(() => {
     //in this section I am grabbing my sticker types from my StickerManager.js...//

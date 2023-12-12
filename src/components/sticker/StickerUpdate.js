@@ -42,7 +42,7 @@ export const StickerUpdate = () => {
     useEffect(() => {
         getSingleSticker(parseInt(stickerId))
             .then((res) => setCurrentSticker(res))
-    }, [])
+    })
 
     
     const changeStickerState = (evt) => {

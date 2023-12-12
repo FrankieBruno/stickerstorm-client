@@ -32,7 +32,7 @@ export const StickerList = (props) => {
                     return <section key={`sticker--${sticker.id}`} className="sticker">
                         <div className="additional--background"></div>
                         <div className="sticker__name">{sticker.name}</div>
-                        <img className="sticker__image w-30 h-32" src={sticker.image} alt="sticker-image"/>
+                        <img className="sticker__image w-30 h-32" src={sticker.image} alt="sticker preview thumbnail"/>
                         <div className="sticker__finish_type">{sticker.finish_type}</div>
                         <button className="btn btn-2 btn-sep icon-create"
                             onClick={() => {navigate(`/stickers/update/${sticker.id}`)}}>Update Sticker</button>
